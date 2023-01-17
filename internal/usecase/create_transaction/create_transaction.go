@@ -28,12 +28,12 @@ func NewCreateTransactionUseCase(transactionGateway gateway.TransactionGateway, 
 }
 
 func (uc *CreateTransactionUseCase) Execute(input CreateTransactionInputDTO) (*CreateTransactionOutputDTO, error) {
-	accountFrom, err := uc.AccountGateway.FindById(input.AccountIDFrom)
+	accountFrom, err := uc.AccountGateway.FindByID(input.AccountIDFrom)
 	if err != nil {
 		return nil, err
 	}
 
-	accountTo, err := uc.AccountGateway.FindById(input.AccountIDTo)
+	accountTo, err := uc.AccountGateway.FindByID(input.AccountIDTo)
 	if err != nil {
 		return nil, err
 	}

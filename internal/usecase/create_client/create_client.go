@@ -46,6 +46,7 @@ func (u *CreateClientUseCase) Execute(input CreateClientInputDTO) (*CreateClient
 	return &CreateClientOutputDTO{
 		ID:        client.ID,
 		Name:      client.Name,
+		Email:     client.Email,
 		CreatedAt: client.CreatedAt,
 		UpdateAt:  client.UpdatedAt,
 	}, nil
